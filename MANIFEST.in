@@ -1,0 +1,3 @@
+include star_ray_web/static/js/*.js
+include star_ray_web/static/svg/*.svg
+include star_ray_web/templates/*.html
