@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- socketio javascript (for updating svg data)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+
+<body>
+    {{ inline_javascript | safe }}
+
+    <!-- Render the SVG here -->
+    <div id="svg-container">
+        {{ svg_code | safe }}
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // disable right clicking by default...
+            window.addEventListener(`contextmenu`, (e) => e.preventDefault());
+
+            document.addEventListener("contextmenu", handleMouseClick)
+
+            // event for when the mouse leaves the browser content window
+            document.addEventListener('mouseout', function (event) {
+                if (!event.relatedTarget && !event.toElement) {
+                    handleMouseOut(event)
+                }
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>

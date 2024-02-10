@@ -1,0 +1,20 @@
+<!-- Render the SVG here -->
+<div id="svg-container">
+    {{ svg_code | safe }}
+</div>
+
+<!-- script to receive SVG data from server -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const socket = new WebSocket('ws://{{address}}/{{route}}');
+        socket.addEventListener('open', function (event) {
+            console.log('Connected to WS Server'); // debug
+        });
+
+        socket.addEventListener('message', function (event) {
+            console.log('Message from server:', event.data); // debug
+            var svgObject = document.getElementById('svg-container');
+            svgObject.innerHTML = event.data;
+        });
+    });
+</script>

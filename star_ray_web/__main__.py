@@ -1,10 +1,12 @@
-from ray import serve
-import time
+# import time
+# import ray
 
-from star_ray_web import AvatarWebServer
+# from star_ray_web import AvatarWeb
 
-avatar = serve.run(AvatarWebServer.bind())
+# ray.init()
 
-while True:
-    # avatar.__cycle__.remote()
-    time.sleep(2)
+# avatar = AvatarWeb.remote([], [], port=8888)
+
+# while True:
+#     # avatar.__cycle__.remote()
+#     time.sleep(2)
