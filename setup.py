@@ -11,7 +11,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "ray[serve]==2.9.1",
-        "starlette<=0.34.0",  # this version is required to prevent an error in ray serve (it should be fixed in ray 2.10)
+        "starlette",
     ],
     package_data={
         "": ["*.js"],
