@@ -10,8 +10,8 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[
-        "ray[serve]==2.9.1",
-        "starlette",
+        "ray[serve]>=2.48.0",
+        "starlette>=0.47.2",
     ],
     package_data={
         "": ["*.js"],
